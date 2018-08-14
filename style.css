@@ -1,0 +1,13 @@
+.attackdiv{
+  display: inline-table;
+  border: solid 2px cyan;
+}
+
+.atkitem{
+
+  grid-template-rows: auto auto auto auto;
+}
+.defencediv{
+  display:grid;
+
+}
