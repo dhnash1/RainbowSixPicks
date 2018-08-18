@@ -13,7 +13,10 @@ margin: 3px;
 width: 23%;
 height: 150px;
 text-align: center;
+}
 
+.selected{
+  background-color: red;
 }
 .defencediv{
   display:grid;

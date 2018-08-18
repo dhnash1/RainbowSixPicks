@@ -63,7 +63,7 @@ function group(x) {
     console.log(gArray);
 }
 group(atk);
-group(def);
+
 
 function random(x){
   console.log(x.length);
@@ -71,11 +71,15 @@ function random(x){
   var sel = Math.round(rand);
   console.log(sel);
   console.log(x[sel].name);
+
 }
 random(atk);
   $scope.dispa = gArray;
   $scope.dispb = def;
 
+var sel = ($scope.dispa[5]);
+console.log(sel);
+sel.addClass('selected');
 
 
 }]);
