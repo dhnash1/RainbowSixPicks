@@ -9,9 +9,10 @@
   </head>
   <body ng-app="myApp">
     <div ng-controller="control">
+      <button type="button" name="button" ng-click="randA()">Randomattacker</button>
         <p>Henlo</p>
          <div class="attackdiv" >
-            <div ng-repeat="ops in dispa" id="atkitem">{{ops.name}} {{ops.index}}</div>
+            <div  class="{{ops.selected}}" ng-repeat="ops in dispa" id="atkitem">{{ops.name}}</div>
          </div>
             <div ng-show="true" class="defencediv" ng-repeat="ops in dispb"><div class="defitem">{{ops.name}}</div></div>
     </div>

@@ -64,21 +64,24 @@ function group(x) {
 }
 group(atk);
 
-
 function random(x){
-  console.log(x.length);
-  var rand = ((Math.random() * x.length));
+  for (var i = 0; i < x.length; i++) {
+    x[i].selected = "unselected";
+  }
+  var rand = ((Math.random() * (x.length - 1)));
   var sel = Math.round(rand);
+  console.log(rand);
   console.log(sel);
   console.log(x[sel].name);
+  x[sel].selected = "selected";
 
 }
-random(atk);
+$scope.randA = function(){
+  random(atk);
+};
   $scope.dispa = gArray;
   $scope.dispb = def;
 
-var sel = ($scope.dispa[5]);
-console.log(sel);
 
 
 
