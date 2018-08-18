@@ -51,9 +51,9 @@ App.controller('control',['$scope','$http',function($scope,$http){
     {name:"Maestro"},
     {name:"Alibi"}
   ];
-function group() {
-  for (var j = 0; j < (atk.length); j++) {
-    gArray.push(atk[j]);
+function group(x) {
+  for (var j = 0; j < (x.length); j++) {
+    gArray.push(x[j]);
     if ((j+1) % 4 == 0) {
       console.log(j+1);
       console.log(gArray);
@@ -62,9 +62,17 @@ function group() {
   }
     console.log(gArray);
 }
-group();
+group(atk);
+group(def);
 
-
+function random(x){
+  console.log(x.length);
+  var rand = ((Math.random() * x.length));
+  var sel = Math.round(rand);
+  console.log(sel);
+  console.log(x[sel].name);
+}
+random(atk);
   $scope.dispa = gArray;
   $scope.dispb = def;
 
