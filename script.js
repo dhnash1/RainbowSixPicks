@@ -76,8 +76,24 @@ function random(x){
   x[sel].selected = "selected";
 
 }
+
+function remove(y){
+    y.selected = "unselected";
+}
+
+function spin(x){
+  for (var i = 0; i < x.length; i++) {
+    x[i].selected = "selected";
+    setTimeout(remove(x[i]),100);
+
+  }
+}
+
+
 $scope.randA = function(){
+    spin(atk);
   random(atk);
+
 };
   $scope.dispa = gArray;
   $scope.dispb = def;
