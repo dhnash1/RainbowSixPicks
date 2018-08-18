@@ -10,8 +10,10 @@
   <body ng-app="myApp">
     <div ng-controller="control">
         <p>Henlo</p>
-            <div class="attackdiv" ng-repeat="ops in dispa"><div class="atkitem">{{ops.name}}</div></div>
-            <div ng-show="false" class="defencediv" ng-repeat="ops in dispb"><div class="defitem">{{ops.name}}</div></div>
+         <div class="attackdiv" >
+            <div ng-repeat="ops in dispa" id="atkitem">{{ops.name}}</div>
+         </div>
+            <div ng-show="true" class="defencediv" ng-repeat="ops in dispb"><div class="defitem">{{ops.name}}</div></div>
     </div>
 
   </body>

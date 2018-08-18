@@ -1,11 +1,19 @@
 .attackdiv{
   display: inline-table;
+  width: 50%;
   border: solid 2px cyan;
+  margin: 2px;
+  align-content: center;
 }
 
-.atkitem{
+#atkitem{
+display: inline-table;
+border: solid orange 2px;
+margin: 3px;
+width: 23%;
+height: 150px;
+text-align: center;
 
-  grid-template-rows: auto auto auto auto;
 }
 .defencediv{
   display:grid;

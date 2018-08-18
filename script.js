@@ -4,6 +4,8 @@ var App = angular.module('myApp',[]);
 
 App.controller('control',['$scope','$http',function($scope,$http){
 
+  gArray = [];
+  nArray = [];
 
   atk = [
     {name:"Sledge"},
@@ -49,8 +51,21 @@ App.controller('control',['$scope','$http',function($scope,$http){
     {name:"Maestro"},
     {name:"Alibi"}
   ];
+function group() {
+  for (var j = 0; j < (atk.length); j++) {
+    gArray.push(atk[j]);
+    if ((j+1) % 4 == 0) {
+      console.log(j+1);
+      console.log(gArray);
 
-  $scope.dispa = atk;
+    }
+  }
+    console.log(gArray);
+}
+group();
+
+
+  $scope.dispa = gArray;
   $scope.dispb = def;
 
 
