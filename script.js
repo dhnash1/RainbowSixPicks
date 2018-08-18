@@ -79,7 +79,7 @@ random(atk);
 
 var sel = ($scope.dispa[5]);
 console.log(sel);
-sel.addClass('selected');
+
 
 
 }]);
