@@ -51,18 +51,20 @@ App.controller('control',['$scope','$http',function($scope,$http){
     {name:"Maestro"},
     {name:"Alibi"}
   ];
-function group(x) {
-  for (var j = 0; j < (x.length); j++) {
-    gArray.push(x[j]);
-    if ((j+1) % 4 == 0) {
-      console.log(j+1);
-      console.log(gArray);
+// function group(x) {
+//   for (var j = 0; j < (x.length); j++) {
+//     gArray.push(x[j]);
+//     if ((j+1) % 4 == 0) {
+//       console.log(j+1);
+//       console.log(gArray);
+//
+//     }
+//   }
+//     console.log(gArray);
+// }
+// group(atk);
 
-    }
-  }
-    console.log(gArray);
-}
-group(atk);
+// Depriciated grouping code, Unneccesary and doesnt work
 
 function random(x){
   for (var i = 0; i < x.length; i++) {
@@ -93,9 +95,11 @@ function spin(x){
 $scope.randA = function(){
     spin(atk);
   random(atk);
-
 };
-  $scope.dispa = gArray;
+$scope.randD = function(){
+  random(def);
+};
+  $scope.dispa = atk;
   $scope.dispb = def;
 
 

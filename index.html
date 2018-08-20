@@ -9,12 +9,17 @@
   </head>
   <body ng-app="myApp">
     <div ng-controller="control">
-      <button type="button" name="button" ng-click="randA()">Randomattacker</button>
         <p>Henlo</p>
          <div class="attackdiv" >
+           <button type="button" name="button" ng-click="randA()">Random Attacker</button>
+           <br>
             <div  class="{{ops.selected}}" ng-repeat="ops in dispa" id="atkitem">{{ops.name}}</div>
          </div>
-            <div ng-show="true" class="defencediv" ng-repeat="ops in dispb"><div class="defitem">{{ops.name}}</div></div>
+         <div class="defencediv">
+           <button type="button" name="button" ng-click="randD()">Random Defender</button>
+           <br>
+            <div class="{{ops.selected}}" ng-repeat="ops in dispb" id="defitem">{{ops.name}}</div>
+         </div>
     </div>
 
   </body>

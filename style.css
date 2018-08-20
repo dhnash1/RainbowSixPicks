@@ -1,24 +1,38 @@
 .attackdiv{
   display: inline-table;
-  width: 50%;
+  width: 48%;
   border: solid 2px cyan;
   margin: 2px;
   align-content: center;
+  text-align: center;
+}
+.defencediv{
+  display: inline-table;
+  align-self: right;
+  width: 48%;
+  border: solid 2px cyan;
+  margin: 2px;
+  align-content: center;
+  text-align: center;
 }
 
 #atkitem{
 display: inline-table;
 border: solid orange 2px;
 margin: 3px;
-width: 23%;
-height: 150px;
+width: 110px;
+height: 110px;
 text-align: center;
+}
+#defitem{
+  display: inline-table;
+  border: solid orange 2px;
+  margin: 3px;
+  width: 110px;
+  height: 110px;
+  text-align: center;
 }
 
 .selected{
   background-color: red;
-}
-.defencediv{
-  display:grid;
-
 }
