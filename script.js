@@ -171,5 +171,29 @@ $scope.picked = function(x){
 
 };//end pick on click function
 
+$scope.enable = function(x){
+  if (x == "atk"){
+    for (var i = 0; i < atk.length; i++) {
+      atk[i].disabled = "enabled";
+    }
+  } else if (x == "def") {
+    for (var j = 0; j < def.length; j++) {
+      def[j].disabled = "enabled";
+    }
+  }
+}; //end enable all function
+
+$scope.disable = function(x){
+  if (x == "atk"){
+    for (var i = 0; i < atk.length; i++) {
+      atk[i].disabled = "disabled";
+    }
+  } else if (x == "def") {
+    for (var j = 0; j < def.length; j++) {
+      def[j].disabled = "disabled";
+    }
+  }
+}; //end disable all function
+
 
 }]); // end controller
