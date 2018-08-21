@@ -9,17 +9,17 @@
   </head>
   <body ng-app="myApp">
     <div ng-controller="control">
-        <p>Henlo</p>
+        <p>Random Selector</p>
          <div class="attackdiv" >
            <button type="button" name="button" ng-click="randA()">Random Attacker</button>
            <br>
-            <div  class="{{ops.selected}}" ng-repeat="ops in dispa" id="atkitem"><img src="{{ops.img}}" width="100"
+            <div  class="{{ops.selected}} {{ops.disabled}}" ng-repeat="ops in dispa" id="atkitem" ng-click="picked('atk')"><img src="{{ops.img}}" width="100"
               height="100"></div>
          </div>
          <div class="defencediv">
            <button type="button" name="button" ng-click="randD()">Random Defender</button>
            <br>
-            <div class="{{ops.selected}}" ng-repeat="ops in dispb" id="defitem"><img src="{{ops.img}}" width="100" height="100"></div>
+            <div class="{{ops.selected}} {{ops.disabled}}" ng-repeat="ops in dispb" id="defitem" ng-click="picked('def')"><img src="{{ops.img}}" width="100" height="100"></div>
          </div>
     </div>
 

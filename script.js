@@ -2,7 +2,7 @@ console.log("hello world");
 
 var App = angular.module('myApp',[]);
 
-App.controller('control',['$scope','$http',function($scope,$http){
+App.controller('control',['$scope','$http','$filter',function($scope,$http,$filter){
 
   gArray = [];
   nArray = [];
@@ -119,9 +119,14 @@ function random(x){
   console.log(rand);
   console.log(sel);
   console.log(x[sel].name);
-  x[sel].selected = "selected";
+  if ((x[sel].disabled == "enabled") || (x[sel].disabled == undefined)) {
+    x[sel].selected = "selected";
+    return;
+  }else{
+    random(x);
+  }
 
-}
+} // end random selector
 
 function remove(y){
     y.selected = "unselected";
@@ -137,7 +142,6 @@ function spin(x){
 
 
 $scope.randA = function(){
-    spin(atk);
   random(atk);
 };
 $scope.randD = function(){
@@ -146,7 +150,26 @@ $scope.randD = function(){
   $scope.dispa = atk;
   $scope.dispb = def;
 
+$scope.picked = function(x){
+  console.log(this);
+  console.log(x);
+  if (x == "atk"){
+    var ara = atk;
+  } else if (x == "def") {
+    var ara = def;
+  }
+  var disable = this.ops.name;
+  console.log(disable);
+  var found = $filter('filter')(ara, {name:disable}, true)[0];
+  console.log(found);
+
+  if ((found.disabled == "enabled") || (found.disabled == undefined)) {
+    found.disabled = "disabled";
+  } else if (found.disabled == "disabled") {
+    found.disabled = "enabled";
+  }
+
+};//end pick on click function
 
 
-
-}]);
+}]); // end controller
