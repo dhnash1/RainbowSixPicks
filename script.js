@@ -6,7 +6,8 @@ App.controller('control',['$scope','$http','$filter',function($scope,$http,$filt
 
   gArray = [];
   nArray = [];
-
+  var fs = 0;
+  var failSafeV = 100;
   atk = [
     {name:"Sledge",
      img: "Icons/Attack/Sledge.png"},
@@ -111,19 +112,27 @@ App.controller('control',['$scope','$http','$filter',function($scope,$http,$filt
 // Depriciated grouping code, Unneccesary and doesnt work
 
 function random(x){
+
   for (var i = 0; i < x.length; i++) {
     x[i].selected = "unselected";
   }
   var rand = ((Math.random() * (x.length - 1)));
   var sel = Math.round(rand);
+  console.log("FAILSAFE" + fs);
   console.log(rand);
   console.log(sel);
   console.log(x[sel].name);
-  if ((x[sel].disabled == "enabled") || (x[sel].disabled == undefined)) {
+  if ((x[sel].disabled == "enabled") || (x[sel].disabled == undefined) && (fs < (failSafeV))  ) {
     x[sel].selected = "selected";
+    fs = 0;
     return;
-  }else{
+  }else if (fs < (failSafeV)) {
+    fs++;
     random(x);
+  }else{
+    console.log("Cant!");
+    fs = 0;
+    return;
   }
 
 } // end random selector

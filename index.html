@@ -8,8 +8,8 @@
     <title>Rainbow 6 Operator Picker</title>
   </head>
   <body ng-app="myApp">
+<div class="bg">
     <div ng-controller="control">
-        <p>Random Selector</p>
          <div class="attackdiv" >
            <button type="button" name="button" ng-click="randA()">Random Attacker</button>
            <button type="button" name="button" ng-click="enable('atk')">Enable All</button>
@@ -26,6 +26,6 @@
             <div class="{{ops.selected}} {{ops.disabled}}" ng-repeat="ops in dispb" id="defitem" ng-click="picked('def')"><img src="{{ops.img}}" width="100" height="100"></div>
          </div>
     </div>
-
+</div>
   </body>
 </html>

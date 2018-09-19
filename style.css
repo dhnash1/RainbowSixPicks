@@ -1,7 +1,20 @@
+body, html{
+  height: 100%;
+}
+
+
+.bg{
+  background-image : url("Icons/BG.jpg");
+  height : 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover%;
+}
+
 .attackdiv{
   display: inline-table;
   width: 48%;
-  border: solid 2px cyan;
+  /*border: solid 2px cyan;*/
   margin: 2px;
   align-content: center;
   text-align: center;
@@ -10,7 +23,7 @@
   display: inline-table;
   align-self: right;
   width: 48%;
-  border: solid 2px cyan;
+  /*border: solid 2px cyan;*/
   margin: 2px;
   align-content: center;
   text-align: center;
@@ -38,5 +51,5 @@ text-align: center;
 }
 
 .disabled{
-  background-color: gray;
+  background-color: darkgray;
 }
