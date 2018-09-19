@@ -4,10 +4,8 @@ var App = angular.module('myApp',[]);
 
 App.controller('control',['$scope','$http','$filter',function($scope,$http,$filter){
 
-  gArray = [];
-  nArray = [];
-  var fs = 0;
-  var failSafeV = 100;
+  var fs = 0; //counts up to failsafeV if random selector fails to select an active operator
+  var failSafeV = 100; //established to keep the random selector from overflowing into infinity if no operators are selected
   atk = [
     {name:"Sledge",
      img: "Icons/Attack/Sledge.png"},
@@ -96,20 +94,6 @@ App.controller('control',['$scope','$http','$filter',function($scope,$http,$filt
     {name: "Clash",
      img: "Icons/Defence/Clash.png"}
   ];
-// function group(x) {
-//   for (var j = 0; j < (x.length); j++) {
-//     gArray.push(x[j]);
-//     if ((j+1) % 4 == 0) {
-//       console.log(j+1);
-//       console.log(gArray);
-//
-//     }
-//   }
-//     console.log(gArray);
-// }
-// group(atk);
-
-// Depriciated grouping code, Unneccesary and doesnt work
 
 function random(x){
 
@@ -118,7 +102,7 @@ function random(x){
   }
   var rand = ((Math.random() * (x.length - 1)));
   var sel = Math.round(rand);
-  console.log("FAILSAFE" + fs);
+  console.log("FAILSAFE " + fs);
   console.log(rand);
   console.log(sel);
   console.log(x[sel].name);
@@ -131,6 +115,7 @@ function random(x){
     random(x);
   }else{
     console.log("Cant!");
+    alert("Please select more operators!");
     fs = 0;
     return;
   }
