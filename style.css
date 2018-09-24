@@ -10,7 +10,7 @@ body, html{
   height : 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover%;
+  background-size: 100%;
 }
 
 .attackdiv{
@@ -51,7 +51,22 @@ text-align: center;
 .selected{
   background-color: red;
 }
+@keyframes fade {
+  from {background-color: transparent;}
+  to {background-color: darkgray; opacity: .3;}
+}
+@keyframes unfade {
+  from {background-color: darkgray;}
+  to {background-color: transparent; opacity: 1;}
 
+}
 .disabled{
-  background-color: darkgray;
+  animation-name: fade;
+  animation-duration: 1s;
+  animation-fill-mode:forwards;
+}
+.enabled{
+  animation-name: unfade;
+  animation-duration: 1s;
+  animation-fill-mode:forwards;
 }
